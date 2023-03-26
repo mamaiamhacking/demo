@@ -1,1 +1,0 @@
-fetch('/guests', {method:'POST', body:'_method=put&guest[email]=' + encodeURIComponent(new URLSearchParams(location.search).get('email').replace(' ', '+'))}).then(()=>window.close()).catch(()=>window.close());
